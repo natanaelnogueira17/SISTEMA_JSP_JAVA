@@ -85,7 +85,7 @@
 																Novo</button>
 															<button type="submit" class="btn btn-success waves-effect waves-light">
 																Salvar</button>
-															<button type="button"  class="btn btn-info waves-effect waves-light" onclick="criarDelete()">
+															<button type="button"  class="btn btn-info waves-effect waves-light" onclick="criarDeleteAjax()">
 																Excluir</button>
 															<!-- <button class="btn btn-warning waves-effect waves-light">Warning
 																Button</button>
@@ -134,6 +134,26 @@
 			document.getElementById("formUser").submit();
 			}
 		}
+		
+		function criarDeleteAjax(){
+			if(confirm("Deseja realmente excluir?")){
+				var urlAction = document.getElementById("formUser").action;
+				var  idUser = document.getElementById("id").value;
+				$.ajax({
+					method: "get", 
+					url: urlAction,
+					data: "id=" + idUser+ "&acao=deletarajax",
+					success: function(response){
+						alert(response);
+						limparForm();
+					}
+				}).fail(function(xhr, status, errorThrown){
+					alert("Erro ao deletar Usuário: " + xhr.responseText);
+				})
+				
+			}
+		}
+		
 	</script>
 </body>
 
