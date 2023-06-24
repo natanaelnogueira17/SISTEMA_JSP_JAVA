@@ -1,0 +1,9 @@
+
+CREATE TABLE IF NOT EXISTS public.model_login
+(
+    login character varying(200),
+    senha character varying(200),
+    CONSTRAINT login_unique UNIQUE (login)
+)
+
+insert into public.model_login(login, senha) values('admin', 'admin');
