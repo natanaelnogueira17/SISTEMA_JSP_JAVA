@@ -127,9 +127,12 @@
 		}
 		
 		function criarDelete() {
+			if(confirm("Deseja realmente excluir?")){
+				
 			document.getElementById("formUser").method = 'get'
 			document.getElementById("acao").value = 'deletar'
 			document.getElementById("formUser").submit();
+			}
 		}
 	</script>
 </body>
