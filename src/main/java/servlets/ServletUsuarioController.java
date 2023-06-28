@@ -2,8 +2,8 @@ package servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
-import javax.rmi.CORBA.Util;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,6 +41,11 @@ public class ServletUsuarioController extends HttpServlet {
 				String idUser = request.getParameter("id");
 				daoUsuario.deletarUser(idUser);
 				response.getWriter().write("Excluído com sucesso!");
+			}
+			else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("buscarUserAjax")) {
+				String idUser = request.getParameter("nomeBusca");
+			List<ModelLogin> dadosJson = daoUsuario.consultarUsuarioList(idUser);
+				//response.getWriter().write("Excluído com sucesso!");
 			}else {
 				request.getRequestDispatcher("principal/usuario.jsp").forward(request, response);
 			}
