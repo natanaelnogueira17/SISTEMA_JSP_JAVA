@@ -50,9 +50,9 @@ public class DaoUsuariorepository {
 	
 	public List<ModelLogin>consultarUsuarioList(String nome) throws SQLException{
 		List<ModelLogin> lista = new ArrayList<>();
-		String sql = "select * from model_login where upper(nome) like upper('%?%)";
+		String sql = "select * from model_login where upper(nome) like upper(?)";
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, nome);
+		statement.setString(1, "%"+nome+"%");
 		ResultSet resultSet = statement.executeQuery();
 		while(resultSet.next()) {
 			ModelLogin usuario = new ModelLogin();

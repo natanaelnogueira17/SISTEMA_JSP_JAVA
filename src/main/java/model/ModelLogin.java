@@ -65,6 +65,14 @@ public class ModelLogin implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "ModelLogin [id=" + id + ", nome=" + nome + ", email=" + email + ", login=" + login + ", senha=" + senha
+				+ "]";
+	}
 
 	@Override
 	public int hashCode() {
