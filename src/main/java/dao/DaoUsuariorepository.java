@@ -103,6 +103,7 @@ public class DaoUsuariorepository {
 			modelLogin.setLogin(resultado.getString("login"));
 			modelLogin.setSenha(resultado.getString("senha"));
 			modelLogin.setNome(resultado.getString("nome"));
+			modelLogin.setUserAdmin(resultado.getBoolean("userAdmin"));
 		}
 		return modelLogin;
 
@@ -121,6 +122,7 @@ public class DaoUsuariorepository {
 			modelLogin.setLogin(resultado.getString("login"));
 			modelLogin.setSenha(resultado.getString("senha"));
 			modelLogin.setNome(resultado.getString("nome"));
+			modelLogin.setUserAdmin(resultado.getBoolean("usrAdmin"));
 		}
 		return modelLogin;
 
