@@ -19,7 +19,7 @@ public class ServletGenericUtil extends HttpServlet implements Serializable {
 	
 	public Long getUserLogado(HttpServletRequest request) throws SQLException {
 		HttpSession session =  request.getSession();
-		String usuarioLogado = (String) session.getAttribute("usuario");
+		String usuarioLogado = (String) session.getAttribute("user");
 		
 		return usuarioRepository.consultaUsuarioLogado(usuarioLogado).getId();
 	}

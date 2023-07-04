@@ -37,11 +37,12 @@ public class ServletLogin extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {try {
+			throws ServletException, IOException {
 
 				String login = request.getParameter("login");
 				String senha = request.getParameter("senha");
 				String url = request.getParameter("url");
+		try {
 
 				if (login != null && !login.isEmpty() && senha != null && !senha.isEmpty()) {
 					ModelLogin modelLogin = new ModelLogin();
